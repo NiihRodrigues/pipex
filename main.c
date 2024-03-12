@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nicrodri <nicrodri@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/12 11:49:06 by nicrodri          #+#    #+#             */
+/*   Updated: 2024/03/12 11:52:55 by nicrodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 void	check_params(int argc, char **argv)
 {
-	if (!argc == 5)
+	if (argc != 5)
 	{
 		perror("pipex: wrong number of arguments");
 		exit(2);
@@ -12,7 +24,6 @@ void	check_params(int argc, char **argv)
 		perror("pipex: infile doesn't have permition or do not exist");
 		exit(66);
 	}
-
 }
 
 void	build_cmds(char **cmds[2], char *cmd1, char *cmd2)
@@ -23,7 +34,7 @@ void	build_cmds(char **cmds[2], char *cmd1, char *cmd2)
 		cmd2++;
 	if (!*cmd1 || !*cmd2)
 	{
-		write(2, "pipex: no command passed to either cmd1 or cmd2 or both\n", 56);
+		write(2, "pipex: no command passed\n", 56);
 		exit(64);
 	}
 	cmds[0] = ft_split(cmd1, ' ');
@@ -57,7 +68,7 @@ int	main(int argc, char **argv, char **envp)
 	int		pids[2];
 	int		fds[2];
 	int		ch[2];
-	char 	**cmds[2];
+	char	**cmds[2];
 
 	check_params(argc, argv);
 	build_cmds(cmds, argv[2], argv[3]);
