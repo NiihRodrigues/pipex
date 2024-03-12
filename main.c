@@ -16,7 +16,7 @@ void	check_params(int argc, char **argv)
 {
 	if (argc != 5)
 	{
-		perror("pipex: wrong number of arguments");
+		write(2, "pipex: wrong number of arguments\n", 33);
 		exit(2);
 	}
 	if (access(argv[1], F_OK & R_OK) == -1)
