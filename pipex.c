@@ -42,3 +42,11 @@ void	open_files(int *fd, char *infile, char *outfile)
 	fd[0] = open(infile, O_RDONLY);
 	fd[1] = open(outfile, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 }
+
+void	close_files(int *fd, int *ch)
+{
+	close(fd[0]);
+	close(fd[1]);
+	close(ch[0]);
+	close(ch[1]);
+}

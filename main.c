@@ -34,7 +34,7 @@ void	build_cmds(char **cmds[2], char *cmd1, char *cmd2)
 		cmd2++;
 	if (!*cmd1 || !*cmd2)
 	{
-		write(2, "pipex: no command passed\n", 56);
+		write(2, "pipex: no command passed\n", 26);
 		exit(64);
 	}
 	cmds[0] = ft_split(cmd1, ' ');
@@ -87,9 +87,6 @@ int	main(int argc, char **argv, char **envp)
 		close(ch[1]);
 		exec_cmd_2(ch[0], fds[1], cmds, envp);
 	}
-	close(ch[0]);
-	close(ch[1]);
-	close(fds[0]);
-	close(fds[1]);
+	close_files(fds, ch);
 	return (0);
 }

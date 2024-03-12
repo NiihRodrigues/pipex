@@ -8,15 +8,13 @@ CFLAGS = -Wall -Werror -Wextra
 SRCS = pipex.c main.c 
 OBJS = ${SRCS:.c=.o}
 
-all: $(LIBFT)
-		$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o pipex		
+all: $(NAME)
 
 $(LIBFT):
 		$(MAKE) -C $(LIBFT_PATH)
 
-$(NAME):
-		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
-		ar rc $(NAME) $(OBJS)
+$(NAME): $(LIBFT) $(SRCS)
+		$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
 
 clean:
 		@$(MAKE) -C $(LIBFT_PATH) fclean
