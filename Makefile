@@ -4,7 +4,7 @@ LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra 
 SRCS = pipex.c main.c 
 OBJS = ${SRCS:.c=.o}
 
