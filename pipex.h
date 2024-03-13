@@ -22,4 +22,5 @@
 char	*get_path(char *cmd, char **envp);
 void	open_files(int *fd, char *infile, char *outfile);
 void	close_files(int *fd, int *ch);
+void	free_cmds(char **cmds[2]);
 #endif

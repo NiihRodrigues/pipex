@@ -50,3 +50,21 @@ void	close_files(int *fd, int *ch)
 	close(ch[0]);
 	close(ch[1]);
 }
+
+void	free_cmds(char **cmds[2])
+{
+	int	i;
+
+	i = 0;
+	while (cmds[0][i])
+	{
+		free(cmds[0][i]);
+		i++;
+	}
+	i = 0;
+	while (cmds[1][i])
+	{
+		free(cmds[1][i]);
+		i++;
+	}
+}

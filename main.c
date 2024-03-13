@@ -88,5 +88,6 @@ int	main(int argc, char **argv, char **envp)
 		exec_cmd_2(ch[0], fds[1], cmds, envp);
 	}
 	close_files(fds, ch);
+	free_cmds(cmds);
 	return (0);
 }
