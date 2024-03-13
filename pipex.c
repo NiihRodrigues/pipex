@@ -67,4 +67,6 @@ void	free_cmds(char **cmds[2])
 		free(cmds[1][i]);
 		i++;
 	}
+	free(cmds[0]);
+	free(cmds[1]);
 }
