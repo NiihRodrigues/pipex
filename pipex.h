@@ -6,14 +6,14 @@
 /*   By: nicrodri <nicrodri@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:49:25 by nicrodri          #+#    #+#             */
-/*   Updated: 2024/03/12 11:49:27 by nicrodri         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:04:23 by nicrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
